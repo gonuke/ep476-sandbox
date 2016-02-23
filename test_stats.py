@@ -1,6 +1,30 @@
 from nose.tools import assert_equal, assert_raises
 
-from stats import mean
+from stats import mean, median
+
+def test_median_1():
+
+    obs = median([1,2,3])
+    exp = 2
+    assert_equal(obs,exp)
+
+def test_median_2():
+
+    obs = median([1,2,3,4])
+    exp = 2.5
+    assert_equal(obs,exp)
+
+def test_median_sort():
+
+    obs = median([5,3,8,2,1])
+    exp = 3
+    assert_equal(obs,exp)
+
+def test_median_tuple():
+
+    obs = median((5,3,8,2,1))
+    exp = 3
+    assert_equal(obs,exp)
 
 def test_mean_1():
 
