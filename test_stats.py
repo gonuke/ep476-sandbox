@@ -1,4 +1,4 @@
-from nose.tools import assert_equal
+from nose.tools import assert_equal, assert_raises
 
 from stats import mean
 
@@ -52,9 +52,7 @@ def test_mean_empty():
 
 def test_mean_string():
 
-    obs = mean(['one','two'])
-    exp = NotImplemented
-    assert_equal(obs,exp)
+    assert_raises(TypeError,mean,['one','two'])
 
 
 
